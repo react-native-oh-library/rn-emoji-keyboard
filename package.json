@@ -1,6 +1,6 @@
 {
-  "name": "rn-emoji-keyboard",
-  "version": "1.7.0",
+  "name": "@react-native-oh-tpl/rn-emoji-keyboard",
+  "version": "1.7.0-0.0.1",
   "description": "Super performant, lightweight, fully customizable emoji picker. Designated to be user and developer friendly! 💖",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -24,7 +24,8 @@
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__",
-    "!**/.*"
+    "!**/.*",
+    "harmony"
   ],
   "scripts": {
     "test": "jest",
@@ -39,9 +40,10 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "harmony"
   ],
-  "repository": "https://github.com/TheWidlarzGroup/rn-emoji-keyboard",
+  "repository": "https://github.com/react-native-oh-library/rn-emoji-keyboard.git",
   "author": "Jakub Grzywacz <kontakt@jakubgrzywacz.pl> (https://github.com/jakex7)",
   "license": "MIT",
   "bugs": {
@@ -51,6 +53,9 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
+  },
+  "dependencies": {
+    "rn-emoji-keyboard": "^1.7.0"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
@@ -165,5 +170,8 @@
         }
       ]
     ]
+  },
+  "harmony": {
+    "alias": "rn-emoji-keyboard"
   }
 }
