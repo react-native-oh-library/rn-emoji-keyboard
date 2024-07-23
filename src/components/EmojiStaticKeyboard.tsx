@@ -139,7 +139,14 @@ export const EmojiStaticKeyboard = React.memo(
       >
         <ConditionalContainer
           condition={!disableSafeArea}
-          container={(children) => (
+          container={Platform.OS as string==='harmony'?(children) => (
+            <View
+              style={[styles.flex, categoryPosition === 'top' && styles.containerReverse]}
+            >
+              {children}
+            </View>
+          ):
+          (children) => (
             <SafeAreaView
               style={[styles.flex, categoryPosition === 'top' && styles.containerReverse]}
             >

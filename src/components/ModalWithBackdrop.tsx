@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   View,
+  Platform,
   type ModalProps,
 } from 'react-native'
 import { KeyboardContext } from '../contexts/KeyboardContext'
@@ -64,6 +65,9 @@ export const ModalWithBackdrop = ({
             </TouchableOpacity>
           </IsSafeAreaWrapper>
         </View>
+        {
+          Platform.OS as string==='harmony'&&!disableSafeArea?<View  style={{height:32,backgroundColor:theme.backdrop}}></View>:<></>
+        }
       </TouchableOpacity>
     </Modal>
   )

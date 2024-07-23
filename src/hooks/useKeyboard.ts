@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Keyboard, type KeyboardEvent } from 'react-native'
+import { Keyboard, type KeyboardEvent,type KeyboardEventName,Platform } from 'react-native'
 
 export const useKeyboard = (isOpen: boolean) => {
   const [keyboardVisible, setKeyboardVisible] = useState(false)
   const [keyboardHeight, setKeyboardHeight] = useState(0)
-
+  const [keyboardshowType,setKeyboardshowType]=useState<KeyboardEventName>('keyboardWillShow')
+  const [keyboardhideType,setKeyboardhideType]=useState<KeyboardEventName>('keyboardWillHide')
   const onKeyboardWillShow = useCallback(
     (e: KeyboardEvent) => {
       if (!isOpen) return
@@ -20,8 +21,12 @@ export const useKeyboard = (isOpen: boolean) => {
   }, [])
 
   useEffect(() => {
-    const showSubscription = Keyboard.addListener('keyboardWillShow', onKeyboardWillShow)
-    const hideSubscription = Keyboard.addListener('keyboardWillHide', onKeyboardWillHide)
+    if(Platform.OS as string==='harmony'){
+      setKeyboardshowType('keyboardDidShow')
+      setKeyboardhideType('keyboardDidHide')
+    }
+    const showSubscription = Keyboard.addListener(keyboardshowType, onKeyboardWillShow)
+    const hideSubscription = Keyboard.addListener(keyboardhideType, onKeyboardWillHide)
     return () => {
       showSubscription.remove()
       hideSubscription.remove()
