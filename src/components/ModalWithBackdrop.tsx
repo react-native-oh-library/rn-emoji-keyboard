@@ -26,7 +26,7 @@ export const ModalWithBackdrop = ({
   ...rest
 }: ModalWithBackdropProps & ModalProps) => {
   const { height: screenHeight } = useWindowDimensions()
-  const translateY = React.useRef(new Animated.Value(screenHeight)).current
+  const translateY = React.useRef(new Animated.Value(Platform.OS as string==='harmony'?0:screenHeight)).current
   const { theme, disableSafeArea } = React.useContext(KeyboardContext)
   const handleTimeout = useTimeout()
 
