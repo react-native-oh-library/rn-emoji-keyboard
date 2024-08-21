@@ -65,9 +65,6 @@ export const ModalWithBackdrop = ({
             </TouchableOpacity>
           </IsSafeAreaWrapper>
         </View>
-        {
-          Platform.OS as string==='harmony'&&!disableSafeArea?<View  style={{height:32,backgroundColor:theme.backdrop}}></View>:<></>
-        }
       </TouchableOpacity>
     </Modal>
   )
