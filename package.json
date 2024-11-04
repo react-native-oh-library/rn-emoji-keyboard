@@ -1,6 +1,6 @@
 {
   "name": "@react-native-oh-tpl/rn-emoji-keyboard",
-  "version": "1.7.0-0.0.3",
+  "version": "1.7.0-0.0.4",
   "description": "Super performant, lightweight, fully customizable emoji picker. Designated to be user and developer friendly! 💖",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
